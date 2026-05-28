@@ -6,7 +6,6 @@ import { VideoSpotlight } from "@/components/video-spotlight";
 import {
   courseInfo,
   featuredVideos,
-  homeMetrics,
   institutionalHighlights,
   newsSeed,
   quickCards,
