@@ -33,10 +33,7 @@ export const navigation: NavItem[] = [
   { label: "Início", href: "/" },
   { label: "Sobre", href: "/sobre" },
   { label: "História", href: "/historia" },
-  { label: "Como Jogar", href: "/como-jogar" },
-  { label: "Regras", href: "/regras" },
-  { label: "Vídeos", href: "/videos" },
-  { label: "Formação", href: "/formacao" },
+  { label: "Como Jogar / Regras", href: "/como-jogar" },
   { label: "Galeria", href: "/galeria" },
   { label: "Notícias", href: "/noticias" },
   { label: "Contato", href: "/contato" },
@@ -65,12 +62,7 @@ export const quickCards = [
   },
 ];
 
-export const homeMetrics = [
-  { value: "Angola", label: "País de origem da modalidade" },
-  { value: "20h", label: "Carga do curso inicial com certificação" },
-  { value: "05-09 Maio", label: "Primeira formação destacada no site" },
-  { value: "Didático", label: "Linguagem pensada para quem está a conhecer o COFOBOL" },
-];
+// homeMetrics removido conforme solicitado
 
 export const audiences = [
   "Atletas que procuram uma nova experiência colectiva",

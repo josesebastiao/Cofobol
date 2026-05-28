@@ -48,7 +48,31 @@ export function SiteHeader() {
           {navigation.map((item) => {
             const active =
               item.href === "/" ? pathname === item.href : pathname.startsWith(item.href);
-
+            // Adiciona submenu de vídeos dentro de Galeria
+            if (item.label === "Galeria") {
+              return (
+                <div key={item.href} className="relative group">
+                  <Link
+                    href={item.href}
+                    className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${
+                      active
+                        ? "bg-blue-deep text-white shadow-sm"
+                        : "text-black hover:bg-red/10 hover:text-red-deep"
+                    }`}
+                  >
+                    {item.label}
+                  </Link>
+                  <div className="absolute left-0 top-full z-10 hidden min-w-[160px] rounded-lg border border-line bg-white py-2 shadow-lg group-hover:block">
+                    <Link
+                      href="/videos"
+                      className="block px-4 py-2 text-sm text-black hover:bg-red/10 hover:text-red-deep"
+                    >
+                      Vídeos
+                    </Link>
+                  </div>
+                </div>
+              );
+            }
             return (
               <Link
                 key={item.href}
@@ -72,7 +96,28 @@ export function SiteHeader() {
             {navigation.map((item) => {
               const active =
                 item.href === "/" ? pathname === item.href : pathname.startsWith(item.href);
-
+              if (item.label === "Galeria") {
+                return (
+                  <div key={item.href} className="flex flex-col">
+                    <Link
+                      href={item.href}
+                      className={`rounded-lg px-4 py-3 text-sm font-semibold ${
+                        active ? "bg-blue-deep text-white" : "text-black hover:bg-red/10"
+                      }`}
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                    <Link
+                      href="/videos"
+                      className="ml-4 rounded-lg px-4 py-2 text-sm font-semibold text-black hover:bg-red/10 hover:text-red-deep"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Vídeos
+                    </Link>
+                  </div>
+                );
+              }
               return (
                 <Link
                   key={item.href}

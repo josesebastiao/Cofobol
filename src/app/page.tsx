@@ -34,26 +34,10 @@ export default function HomePage() {
             <Link href="/videos" className="btn-secondary !border-white/30 !bg-white/[0.12] !text-white">
               Ver vídeos
             </Link>
-            <Link href="/formacao" className="btn-secondary !border-white/30 !bg-white !text-black">
-              Inscrever-se no curso
-            </Link>
+            {/* Botão 'Inscrever-se no curso' removido */}
           </>
         }
-        aside={
-          <div className="grid gap-3 sm:grid-cols-2">
-            {homeMetrics.map((metric) => (
-              <div
-                key={metric.label}
-                className="border border-white/[0.14] bg-white/[0.08] p-4 backdrop-blur-sm"
-              >
-                <p className="font-display text-2xl font-semibold uppercase">
-                  {metric.value}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-white/[0.72]">{metric.label}</p>
-              </div>
-            ))}
-          </div>
-        }
+        // Sessão de métricas removida
       />
 
       <section className="section-shell py-10">
