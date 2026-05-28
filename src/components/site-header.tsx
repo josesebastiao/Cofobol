@@ -19,13 +19,13 @@ export function SiteHeader() {
           <Image
             src="/cofobol-logo.jpeg"
             alt="COFOBOL-TEV-FM"
-            width={210}
-            height={72}
+            width={250}
+            height={86}
             priority
-            className="h-12 w-auto object-contain sm:h-14"
+            className="h-14 w-auto object-contain sm:h-16"
           />
           <div className="hidden min-w-0 border-l border-line pl-3 xl:block">
-            <p className="font-display text-xl font-semibold uppercase leading-none text-blue-deep">
+            <p className="font-display text-xl font-semibold uppercase leading-none text-black">
               COFOBOL
             </p>
             <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-muted">
@@ -55,8 +55,8 @@ export function SiteHeader() {
                 href={item.href}
                 className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${
                   active
-                    ? "bg-black text-white"
-                    : "text-blue-deep hover:bg-black/5"
+                    ? "bg-blue-deep text-white shadow-sm"
+                    : "text-black hover:bg-red/10 hover:text-red-deep"
                 }`}
               >
                 {item.label}
@@ -78,7 +78,7 @@ export function SiteHeader() {
                   key={item.href}
                   href={item.href}
                   className={`rounded-lg px-4 py-3 text-sm font-semibold ${
-                    active ? "bg-black text-white" : "text-blue-deep"
+                    active ? "bg-blue-deep text-white" : "text-black hover:bg-red/10"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
