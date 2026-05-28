@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -11,25 +12,31 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/45 bg-white/65 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="grid h-11 w-11 place-items-center rounded-2xl bg-linear-to-br from-green to-blue text-sm font-black tracking-[0.24em] text-white shadow-lg shadow-blue/25">
-            CF
-          </div>
-          <div>
-            <p className="font-display text-2xl font-semibold uppercase leading-none text-blue-deep">
+    <header className="sticky top-0 z-50 border-b border-line bg-white/92 backdrop-blur-xl">
+      <div className="h-1 w-full bg-linear-to-r from-red via-blue to-green" />
+      <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:px-8">
+        <Link href="/" className="flex min-w-0 items-center gap-3">
+          <Image
+            src="/cofobol-logo.jpeg"
+            alt="COFOBOL-TEV-FM"
+            width={210}
+            height={72}
+            priority
+            className="h-12 w-auto object-contain sm:h-14"
+          />
+          <div className="hidden min-w-0 border-l border-line pl-3 xl:block">
+            <p className="font-display text-xl font-semibold uppercase leading-none text-blue-deep">
               COFOBOL
             </p>
-            <p className="text-xs uppercase tracking-[0.18em] text-muted">
-              Novo paradigma desportivo colectivo
+            <p className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-muted">
+              Tev-FM
             </p>
           </div>
         </Link>
 
         <button
           type="button"
-          className="inline-flex rounded-full border border-line bg-white/75 px-4 py-2 text-sm font-semibold text-blue-deep lg:hidden"
+          className="inline-flex rounded-lg border border-line bg-white px-4 py-2 text-sm font-semibold text-blue-deep lg:hidden"
           onClick={() => setIsOpen((current) => !current)}
           aria-expanded={isOpen}
           aria-label="Abrir menu"
@@ -46,10 +53,10 @@ export function SiteHeader() {
               <Link
                 key={item.href}
                 href={item.href}
-                className={`rounded-full px-4 py-2 text-sm font-semibold transition ${
+                className={`rounded-lg px-3 py-2 text-sm font-semibold transition ${
                   active
-                    ? "bg-blue-deep text-white"
-                    : "text-blue-deep hover:bg-white/80"
+                    ? "bg-black text-white"
+                    : "text-blue-deep hover:bg-black/5"
                 }`}
               >
                 {item.label}
@@ -60,7 +67,7 @@ export function SiteHeader() {
       </div>
 
       {isOpen ? (
-        <nav className="border-t border-white/45 bg-white/92 lg:hidden">
+        <nav className="border-t border-line bg-white lg:hidden">
           <div className="mx-auto flex max-w-7xl flex-col px-4 py-3 sm:px-6">
             {navigation.map((item) => {
               const active =
@@ -70,8 +77,8 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-2xl px-4 py-3 text-sm font-semibold ${
-                    active ? "bg-blue-deep text-white" : "text-blue-deep"
+                  className={`rounded-lg px-4 py-3 text-sm font-semibold ${
+                    active ? "bg-black text-white" : "text-blue-deep"
                   }`}
                   onClick={() => setIsOpen(false)}
                 >

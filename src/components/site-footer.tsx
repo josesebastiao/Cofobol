@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { navigation } from "@/lib/site-data";
@@ -11,13 +12,18 @@ export function SiteFooter() {
   ].filter((item) => item.href);
 
   return (
-    <footer className="border-t border-white/50 bg-white/55 backdrop-blur-xl">
+    <footer className="border-t border-line bg-white">
+      <div className="h-1 w-full bg-linear-to-r from-red via-blue to-green" />
       <div className="section-shell grid gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <div className="space-y-6">
-          <div className="space-y-3">
-            <p className="font-display text-3xl font-semibold uppercase text-blue-deep">
-              COFOBOL
-            </p>
+          <div className="space-y-4">
+            <Image
+              src="/cofobol-logo.jpeg"
+              alt="COFOBOL-TEV-FM"
+              width={280}
+              height={96}
+              className="h-16 w-auto object-contain"
+            />
             <p className="max-w-2xl text-sm leading-7 text-muted">
               Plataforma institucional para apresentar a modalidade, apoiar formações,
               divulgar eventos e preparar a próxima etapa de crescimento do COFOBOL.
@@ -29,7 +35,7 @@ export function SiteFooter() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-full border border-line bg-white/65 px-4 py-2 text-sm font-semibold text-blue-deep transition hover:bg-white"
+                className="rounded-lg border border-line bg-white px-4 py-2 text-sm font-semibold text-blue-deep transition hover:border-red/40 hover:bg-red/5"
               >
                 {item.label}
               </Link>
